@@ -57,3 +57,44 @@ Install a database server on your local machine (if you have WAMP, you already h
 Add a table with some column and value. When you choose type of database server, think that you
 might want to connect to it from Node.js later...
 Examples: MySQL, https://mariadb.org/, MongoDB, or WAMP that includes the MySQL.
+
+# INSTALLATION
+We will use Ubuntu as operating system for all installations below.
+
+## NODE
+   * Install curl
+   ` sudo apt install curl`
+   * Install Node Version Manager (NVM) 
+   ` curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash `
+   * Source profile ` source ~/.bashrc `
+   * Install node v10 ` nvm install 10`
+   * Set as default ` nvm use 10 `
+   * If you want to use latest npm ` npm install npm@latest -g `
+
+## NODEMON
+   * `npm install -g nodemon`
+   
+## BABEL
+   * `npm install --save-dev babel`
+   * create `.babelrc` file and add the following
+   
+## WEBPACK
+   * Create a `webpack-config.js` file and add the following
+   
+## DATABASE - MongoDB
+   *  `sudo apt update`
+   * `sudo apt install -y mongodb`
+   * To check the status if mongodb is running
+   `sudo systemctl status mongodb`
+   * To verify the connectivity to the server run the following command, you should see ok:1.
+   `mongo --eval 'db.runCommand({connectionStatus: 1})' `
+   * The following are useful commands for the mongodb service
+        * Check status `sudo systemctl status mongodb`
+        * Start service `sudo systemctl start mongodb`
+        * Stop service `sudo systemctl stop mongodb`
+        * Restart service `sudo systemctl restart mongodb`
+        * To make the service auto start with OS `sudo systemctl enable mongodb`
+        * To disable auto start with OS `sudo systemctl disable mongodb`
+   * If you are using firewall (ufw) and want to enable mongodb (port 27017)
+        * ` sudo ufw allow 27017`
+        * Check status ` sudo ufw status`
