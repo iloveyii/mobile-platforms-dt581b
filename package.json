@@ -1,0 +1,12 @@
+{
+  "name": "DT581B-lab1",
+  "version": "1.0.0",
+  "description": "This first lab in the course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["mongo", "express", "react", "node", "javascript", "typescript"],
+  "author": "Hazrat Ali<iloveyii@yahoo.com>",
+  "license": "ISC"
+}
