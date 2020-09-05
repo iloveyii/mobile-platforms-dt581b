@@ -75,8 +75,42 @@ We will use Ubuntu as operating system for all installations below.
    * `npm i -g nodemon`
    
 ## BABEL
-   * `npm i --save-dev babel`
+   * `npm i --save-dev @babel/core @babel/preset-env babel-loader`
+   * `npm i --save-dev  @babel/runtime core-js@3`
    * create `.babelrc` file and add the following
+```json
+    {
+        "presets" : [
+            ["@babel/preset-env", {
+                "useBuiltIns": "usage",
+                "corejs": "3",
+                "targets": {
+                    "browsers": [
+                        "last 5 versions",
+                        "ie >= 8"
+                    ]
+                }
+            }]
+        ]
+    }
+```
+  * Add the following in the module loader section of webpack.config.js file
+```javascript
+    {
+        // ...
+        module: {
+            rules: [
+                {
+                    test: /\.js$/, // Tell babel extension files to transpile
+                    exclude: /node_modules/, // Files to be ignored
+                    use: {
+                        loader: 'babel-loader' // Specify the babel - loader
+                    } 
+                }
+            ]
+        }
+    }
+```
    
 ## WEBPACK
    * Webpack is a static module bundler which bundles all js files into a single bundle.js file.
@@ -99,7 +133,7 @@ We will use Ubuntu as operating system for all installations below.
         plugins: [
             new HtmlWebpackPlugin({
                 filename: 'index.html', // Create this file in output.path
-                template: './src/index.html' // From this template
+                template: './src/index.html' // From this template & add script tag for bundle.js
             })
         ]
     }
