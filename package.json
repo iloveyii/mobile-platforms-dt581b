@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
+    "postdev": "cp src/manifest.json dist/manifest.json & cp src/images dist/images -Rf",
     "start": "webpack-dev-server --mode development --open"
   },
   "keywords": [
@@ -19,6 +20,7 @@
   "author": "Hazrat Ali<iloveyii@yahoo.com>",
   "license": "ISC",
   "devDependencies": {
+    "copy-webpack-plugin": "^6.1.0",
     "html-webpack-plugin": "^4.4.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
