@@ -13,16 +13,16 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',         // Create this file in output.path
-            template: './public/index.html'    // From this template
+            template: './public/index.html' // From this template
         })
     ],
     module: {
         rules: [
             {
-                test: /\.js$/, // Tell babel extension files to transpile
-                exclude: /node_modules/, // Files to be ignored
+                test: /\.js$/,              // Tell babel extension files to transpile
+                exclude: /node_modules/,    // Files to be ignored
                 use: {
-                    loader: 'babel-loader' // Specify the babel - loader
+                    loader: 'babel-loader'  // Specify the babel - loader
                 }
             }
         ]

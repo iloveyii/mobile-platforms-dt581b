@@ -165,7 +165,7 @@ We will use Ubuntu as operating system for all installations below.
      `firebase init`
    * Select `Create new project` and enter a name e.g `mobile-platforms-lab1`
    * Write `dist` as public directory.
-   * Deploy by running  `firebase deploy`, this will give you a URL, click it see app online.
+   * Deploy by running  `firebase deploy`, this will give you a URL, click it to see app online.
    
      
 ## RUN THE APP
