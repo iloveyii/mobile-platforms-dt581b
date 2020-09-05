@@ -19,10 +19,10 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.js$/,              // Tell babel extension files to transpile
+                test: /\.js$/,              // Tell babel which extension files to transpile
                 exclude: /node_modules/,    // Files to be ignored
                 use: {
-                    loader: 'babel-loader'  // Specify the babel - loader
+                    loader: 'babel-loader'  // Specify the babel loader - transpile ES6
                 }
             }
         ]
