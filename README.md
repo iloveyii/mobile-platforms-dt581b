@@ -6,7 +6,7 @@ DT581B - Preparation - Lab 1
 Get familiar with one of the biggest and fastest growing technologies today: Node.js and some of its
 common tools.
 
-Tools                   |  Logo
+HKR                   |  Mobile Platforms
 :-------------------------:|:-------------------------:
 ![hkr](https://github.com/iloveyii/mobile-platforms-dt581b/blob/master/images/hkr.png)  |  ![DT581B](https://github.com/iloveyii/mobile-platforms-dt581b/blob/master/images/dt581b.png)
 ![mongo](https://github.com/iloveyii/mobile-platforms-dt581b/blob/master/images/mongodb.png)  |  ![express](https://github.com/iloveyii/mobile-platforms-dt581b/blob/master/images/expressjs.png)
@@ -72,22 +72,47 @@ We will use Ubuntu as operating system for all installations below.
    * If you want to use latest npm ` npm install npm@latest -g `
 
 ## NODEMON
-   * `npm install -g nodemon`
+   * `npm i -g nodemon`
    
 ## BABEL
-   * `npm install --save-dev babel`
+   * `npm i --save-dev babel`
    * create `.babelrc` file and add the following
    
 ## WEBPACK
+   * Webpack is a static module bundler which bundles all js files into a single bundle.js file.
+   * Install `npm i --save-dev webpack`
+   * Install cli to run webpack `npm i --save-dev webpack-cli`
+   * Additionally we can also install webpack dev server and html plugin to serve html pages for development purpose
+    `npm i --save-dev webpack-dev-server html-webpack-plugin`
    * Create a `webpack-config.js` file and add the following
+```javascript
+    const path = require('path');
+    module.exports = {
+        entry : './src/js/index.js', // Location of main js file
+        output : { // Where the bundle file should be saved
+            path: path.resolve(__dirname, 'dist'),
+            filename: 'js/bundle.js'
+        },
+        devServer: {
+            contentBase: './dist' // Content path   
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                filename: 'index.html', // Create this file in output.path
+                template: './src/index.html' // From this template
+            })
+        ]
+    }
+
+```
    
 ## DATABASE - MongoDB
-   *  `sudo apt update`
+   * `sudo apt update`
    * `sudo apt install -y mongodb`
    * To check the status if mongodb is running
-   `sudo systemctl status mongodb`
+     `sudo systemctl status mongodb`
    * To verify the connectivity to the server run the following command, you should see ok:1.
-   `mongo --eval 'db.runCommand({connectionStatus: 1})' `
+    `mongo --eval 'db.runCommand({connectionStatus: 1})' `
    * The following are useful commands for the mongodb service
         * Check status `sudo systemctl status mongodb`
         * Start service `sudo systemctl start mongodb`
@@ -96,5 +121,5 @@ We will use Ubuntu as operating system for all installations below.
         * To make the service auto start with OS `sudo systemctl enable mongodb`
         * To disable auto start with OS `sudo systemctl disable mongodb`
    * If you are using firewall (ufw) and want to enable mongodb (port 27017)
-        * ` sudo ufw allow 27017`
-        * Check status ` sudo ufw status`
+        * `sudo ufw allow 27017`
+        * Check status `sudo ufw status`
