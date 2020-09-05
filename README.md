@@ -17,14 +17,43 @@ Tools                   |  Logo
 
 [DEMO TASK 5](https://task5-2098b.firebaseapp.com/)
 
-## Installation
-   * Clone repo `git clone https://github.com/iloveyii/iot-lab`
-   * npm i --unsafe-perm
-   * npm run task1 # 2,3...7
-    
+## INSTALL NODE.JS WITH TOOLS
+Install the following on your computer:
+   * Node.js
+   * Babel, Webpack, Nodemon
+   * A local database server (MSSQL, MySQL, MongoDb, or any other of your choice)
+Read how the different tools work and try them out and install them in one small project.
+You are free to install other tools as well, but you may NOT pick a complete bundle that has all of
+these in one module. For this lab, you must install these components separately in this project
+(although you should install “Nodemon” globally). 
 
-## SD card
-   * Clone SD cards 
-```bash
-    sudo dd if=/dev/sda of=~/sda.img bs=4096 conv=notrunc,noerror status=progress
-```
+## NODE.JS
+   After you installed Node.js, create a simple project that you can extend a bit so that you can
+   experiment with the tools above in the same project. Use the HTTP component as shown in the
+   lecture to be able to display something in a browser. Be ready to explain some of the fundamental
+   concepts of Node.js during the lab, e.g. how you install a new module, what the “package.json” file is
+   used for, etc.
+   
+## BABEL
+Use Babel to compile your Node.js syntax into backwards compatible Javascript code. Use some ES6
+syntax so you can clearly see code changes after Babel has processed it. Be ready to give an example
+and explain how it works during the actual lab.
+
+Also do some modifications into the “.babelrc” file. Then do the corresponding setting in your
+project’s package.json instead.
+
+## WEBPACK
+Use webpack to have all your dependencies and code bundled into one Javascript file. Create at least
+one extra JavaScript file that exports some functionality that you will use in your main app file and
+be ready to show on the lab how this is bundled with Webpack.
+
+## NODEMON
+After you have installed Nodemon, start your project with “nodemon” instead of “node” and verify
+that changing a Node.js source file will also be reflected in the browser without restarting the server
+(but you might have to reload the page in the browser!)
+  
+## DATABASE PREPARATION
+Install a database server on your local machine (if you have WAMP, you already have it!). 
+Add a table with some column and value. When you choose type of database server, think that you
+might want to connect to it from Node.js later...
+Examples: MySQL, https://mariadb.org/, MongoDB, or WAMP that includes the MySQL.
