@@ -13,9 +13,8 @@ HKR                   |  Mobile Platforms
 ![react](https://github.com/iloveyii/mobile-platforms-dt581b/blob/master/public/images/reactjs.png)  |  ![node](https://github.com/iloveyii/mobile-platforms-dt581b/blob/master/public/images/nodejs.png)
   
 
-[DEMO TASK 3](https://hkr-iot-lab1.firebaseapp.com/)
+[DEMO LAB 1](https://mobile-platforms-lab1.web.app/)
 
-[DEMO TASK 5](https://task5-2098b.firebaseapp.com/)
 
 ## INSTALL NODE.JS WITH TOOLS
 Install the following on your computer:
@@ -157,7 +156,18 @@ We will use Ubuntu as operating system for all installations below.
    * If you are using firewall (ufw) and want to enable mongodb (port 27017)
         * `sudo ufw allow 27017`
         * Check status `sudo ufw status`
-
+## HOSTING - Firebase
+   * Install firebase package
+     `npm i -g firebase-tools`
+   * Login firebase - login to website
+     `firebase login`
+   * Init firebase and choose `Hosting: Configure and deploy Firebase Hosting sites` by pressing space key (and then Enter) on your keyboard.
+     `firebase init`
+   * Select `Create new project` and enter a name e.g `mobile-platforms-lab1`
+   * Write `dist` as public directory.
+   * Deploy by running  `firebase deploy`, this will give you a URL, click it see app online.
+   
+     
 ## RUN THE APP
    * Clone the repo
      `git clone https://github.com/iloveyii/mobile-platforms-dt581b.git`
