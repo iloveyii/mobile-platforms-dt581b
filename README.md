@@ -157,3 +157,13 @@ We will use Ubuntu as operating system for all installations below.
    * If you are using firewall (ufw) and want to enable mongodb (port 27017)
         * `sudo ufw allow 27017`
         * Check status `sudo ufw status`
+
+## RUN THE APP
+   * Clone the repo
+     `git clone https://github.com/iloveyii/mobile-platforms-dt581b.git`
+   * CD to directory
+     `cd mobile-platforms-dt581b`
+   * Compile using webpack and babel
+     `npm run dev`
+   * Run the app, this command will open a browser window. Open console in dev tools to see result.
+     `npm start`
