@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "postdev": "cp src/manifest.json dist/manifest.json & cp src/images dist/images -Rf",
+    "postdev": "cp public/manifest.json dist/manifest.json & cp public/images dist/images -Rf",
     "start": "webpack-dev-server --mode development --open"
   },
   "keywords": [
