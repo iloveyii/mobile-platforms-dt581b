@@ -10,7 +10,7 @@ const db = mysql.createConnection({
     password: 'root'
 });
 
-db.connect(error => {
+db.connect({},error => {
     if (error) {
         throw error;
     }
@@ -24,13 +24,34 @@ const hostname = 'localhost';
 const readFile = (fileName) => {
     const data = fs.readFileSync(path.resolve(__dirname, fileName));
     return data;
+};
+
+const getTable = (rows) => {
+    let table = '<table class="table table-hover">';
+    table += '<thead><tr><th>unit</th><th>temperature</th></tr></thead><tbody>';
+    rows.map(row => {
+        table += '<tr>';
+            table += `<td>${row['unit_id']}</td>`
+            table += `<td>${row['temperature']}</td>`
+        table += '</tr>';
+    });
+    table += '</tbody></table>';
+    return table;
+
 }
 
 const handleRequest = (request, response) => {
     response.status = 200;
     response.setHeader('Content-Type', 'text/html');
-    const content = readFile('index.html');
-    response.end(content);
+    if(db)
+    db.query('select * from units', (error, result, fields) => {
+        if (error) throw error;
+        const header = readFile('header.html');
+        const data = getTable(result);
+        const footer = readFile('footer.html');
+        response.end( header + data + footer);
+    });
+
 };
 
 http.createServer(handleRequest).listen(port, hostname, () => {
