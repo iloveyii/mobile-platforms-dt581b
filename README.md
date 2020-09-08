@@ -117,22 +117,22 @@ We will use Ubuntu as operating system for all installations below.
    * Install cli to run webpack `npm i --save-dev webpack-cli`
    * Additionally we can also install webpack dev server and html plugin to serve html pages for development purpose
     `npm i --save-dev webpack-dev-server html-webpack-plugin`
-   * Create a `webpack-config.js` file and add the following
+   * Create a `webpack.config.js` file and add the following
 ```javascript
     const path = require('path');
     module.exports = {
-        entry : './src/js/index.js', // Location of main js file
-        output : { // Where the bundle file should be saved
+        entry : './src/js/index.js',                // Location of main js file
+        output : {                                  // Where the bundle file should be saved
             path: path.resolve(__dirname, 'dist'),
             filename: 'js/bundle.js'
         },
         devServer: {
-            contentBase: './dist' // Content path   
+            contentBase: './public'                 // Content path   
         },
         plugins: [
             new HtmlWebpackPlugin({
-                filename: 'index.html', // Create this file in output.path
-                template: './src/index.html' // From this template & add script tag for bundle.js
+                filename: 'index.html',             // Create this file in output.path
+                template: './src/index.html'        // From this template & add script tag for bundle.js
             })
         ]
     }
