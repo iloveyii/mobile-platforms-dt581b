@@ -1,5 +1,7 @@
 const http = require('http');
 const mysql = require('mysql');
+const fs = require('fs');
+const path = require('path');
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -9,7 +11,7 @@ const db = mysql.createConnection({
 });
 
 db.connect(error => {
-    if(error) {
+    if (error) {
         throw error;
     }
 
@@ -19,10 +21,16 @@ db.connect(error => {
 const port = 7000;
 const hostname = 'localhost';
 
+const readFile = (fileName) => {
+    const data = fs.readFileSync(path.resolve(__dirname, fileName));
+    return data;
+}
+
 const handleRequest = (request, response) => {
     response.status = 200;
-    response.setHeader('Content-Type', 'text/plain');
-    response.end('Hello world');
+    response.setHeader('Content-Type', 'text/html');
+    const content = readFile('index.html');
+    response.end(content);
 };
 
 http.createServer(handleRequest).listen(port, hostname, () => {
