@@ -139,7 +139,8 @@ We will use Ubuntu as operating system for all installations below.
 
 ```
    
-## DATABASE - MongoDB
+## DATABASE 
+#### MongoDB
    * `sudo apt update`
    * `sudo apt install -y mongodb`
    * To check the status if mongodb is running
@@ -156,6 +157,14 @@ We will use Ubuntu as operating system for all installations below.
    * If you are using firewall (ufw) and want to enable mongodb (port 27017)
         * `sudo ufw allow 27017`
         * Check status `sudo ufw status`
+ #### MySQL
+   * Install 
+     `sudo apt update`       
+     `sudo apt install mysql-server`       
+     `sudo mysql_secure_installation`       
+        
+        
+        
 ## HOSTING - Firebase
    * Install firebase package
      `npm i -g firebase-tools`
@@ -170,10 +179,10 @@ We will use Ubuntu as operating system for all installations below.
      
 ## RUN THE APP
    * Clone the repo
-     `git clone https://github.com/iloveyii/mobile-platforms-dt581b.git`
+     `git clone https://github.com/iloveyii/mobile-platforms-dt581b-lab1.git`
    * CD to directory
-     `cd mobile-platforms-dt581b`
+     `cd mobile-platforms-dt581b-lab1`
    * Compile using webpack and babel
-     `npm run dev`
+     `npm run build`
    * Run the app, this command will open a browser window. Open console in dev tools to see result.
      `npm start`
