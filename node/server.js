@@ -6,6 +6,6 @@ const port = 7000;
 const hostname = 'localhost';
 
 http.createServer(handleRequest).listen(port, hostname, () => {
-    console.log(`http server is listing on http://${hostname}:${port}`)
+    console.log(`http server is listening on http://${hostname}:${port}`)
 });
 

@@ -19,7 +19,6 @@ const handleRequest = (request, response) => {
             const data = getTable(result);
             const footer = readFile('footer.html');
             // response.end(header + data + footer);
-            console.log(result)
             response.end(JSON.stringify(result));
         });
     } else {
