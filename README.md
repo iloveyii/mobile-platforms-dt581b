@@ -157,6 +157,8 @@ We will use Ubuntu as operating system for all installations below.
    * If you are using firewall (ufw) and want to enable mongodb (port 27017)
         * `sudo ufw allow 27017`
         * Check status `sudo ufw status`
+        
+        
  #### MySQL
    * Install 
      `sudo apt update`       
