@@ -19,3 +19,23 @@ class Student {
 
 const std = new Student('Kan', 'HKR');
 std.userInfo();
+
+
+class Measurement {
+    constructor(jsonData) {
+        this.rows = jsonData;
+    }
+
+    htmlTable() {
+        let table = '<table class="table table-hover">';
+        table += '<thead><tr><th>unit</th><th>temperature</th></tr></thead><tbody>';
+        this.rows.map(row => {
+            table += '<tr>';
+            table += `<td>${row['unit_id']}</td>`
+            table += `<td>${row['temperature']}</td>`
+            table += '</tr>';
+        });
+        table += '</tbody></table>';
+        return table;
+    }
+}
