@@ -4,7 +4,7 @@
   "description": "DT581B-lab1 - node server",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js --hot"
+    "start": "nodemon server.js --hot"
   },
   "keywords": [],
   "author": "Hazrat Ali",

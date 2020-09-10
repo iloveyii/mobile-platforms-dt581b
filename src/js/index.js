@@ -39,3 +39,16 @@ class Measurement {
         return table;
     }
 }
+
+
+(function () {
+    const root = document.querySelector('#root');
+    root.innerHTML = 'HIII';
+
+    fetch('http://localhost:7000/')
+        .then(response => response.json())
+        .then(data => {
+            const m = new Measurement(data);
+            root.innerHTML = m.htmlTable();
+        });
+})();
